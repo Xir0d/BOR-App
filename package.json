@@ -1,0 +1,16 @@
+{
+  "name": "Application MeJ",
+  "productName": "Application MeJ",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "pacom",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "22.0.2"
+  }
+}
