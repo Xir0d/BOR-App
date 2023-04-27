@@ -8,20 +8,9 @@
 
 //CODE
 
-prompt({
-  title: 'Variable',
-  label: 'Voici votre variable:',
-  value: myVariable,
-  inputAttrs: { // désactive l'édition du champ de saisie
-    readOnly: true
-  },
-  type: 'input'
-}).then((r) => {
-  if (r === null) {
-    console.log('La fenêtre de dialogue a été fermée sans entrée.');
-  } else {
-    // Copie de la variable dans le presse-papiers
-    clipboard.writeText(myVariable);
-    console.log('La variable a été copiée dans le presse-papiers.');
-  }
-}).catch(console.error);
+const { PythonShell } = require('python-shell');
+const boutoncrypt = document.getElementById("crypt");
+
+boutoncrypt.addEventListener('click', function() {
+  console.log('Bouton cliqué !');  
+});
