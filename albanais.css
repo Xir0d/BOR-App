@@ -2,15 +2,19 @@ body {
     background-image: radial-gradient(circle, #121212, #2b1b2d, #531a39, #7b1430, #962311);
     animation: loading 1s 1;
     font-family: 'Montserrat', sans-serif;
+    cursor: default;
+    overflow: hidden;
 }
 
 .retour {
     color: #ffffff;
     background-color: #121212;
+    border-radius: 0.5vh;
     padding: 0.5vh;
     margin-bottom: 2vh;
     font-size: 2vh;
     cursor: pointer;
+    border: 0.2vh solid grey;
 }
 
 .retour:hover {
@@ -26,6 +30,22 @@ app_title {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0.2vh solid black;
+}
+
+.emoji1 {
+    transition: 1s;
+}
+
+.emoji1:hover {
+    transform: scale(1.5);
+}
+
+.emoji2 {
+    transition: 5s;
+}
+.emoji2:hover {
+    transform: scale(10);
 }
 
 .champs {
@@ -37,6 +57,7 @@ app_title {
     box-shadow: 3px 10px 10px 0px #121212;
     margin-left: 40vh;
     margin-right: 40vh;
+    border: 0.2vh solid black;
 }
 
 .key {
@@ -68,6 +89,9 @@ app_title {
     border-radius: 15px;
     margin-right: 15vh;
     cursor: pointer;
+    border: 0.2vh solid black;
+    transition: 0.5s;
+    
 }
 
 .crypt:hover {
@@ -82,6 +106,8 @@ app_title {
     font-size: 5vh;
     border-radius: 15px;
     cursor: pointer;
+    border: 0.2vh solid black;
+    transition: 0.5s;
 }
 
 .decrypt:hover {
