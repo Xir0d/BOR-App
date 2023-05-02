@@ -1,16 +1,9 @@
-/**
- * This file is loaded via the <script> tag in the index.html file and will
- * be executed in the renderer process for that window. No Node.js APIs are
- * available in this process because `nodeIntegration` is turned off and
- * `contextIsolation` is turned on. Use the contextBridge API in `preload.js`
- * to expose Node.js functionality from the main process.
- */
-
-//CODE
-
-const { PythonShell } = require('python-shell');
-const boutoncrypt = document.getElementById("crypt");
-
-boutoncrypt.addEventListener('click', function() {
-  console.log('Bouton cliqué !');  
+//Obligation d'ecriture en majuscule dans le champs pour saisir la clé:
+let myInput = document.getElementById("key");
+myInput.addEventListener("input", function() {
+  this.value = this.value.toUpperCase();
 });
+
+//Lancement du scrypt pour crypter:
+
+//Lancement du scrypt pour décrypter:
