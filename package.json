@@ -1,6 +1,6 @@
 {
-  "name": "BOR-App-main",
-  "productName": "BOR-App-main",
+  "name": "BOR-App",
+  "productName": "BOR-App",
   "description": "My Electron application description",
   "keywords": [],
   "main": "./main.js",

@@ -1,3 +1,16 @@
 body {
   background-color: #101728;
+  animation: loading 1s 1;
+}
+
+
+/*Animations:*/
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
