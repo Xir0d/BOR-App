@@ -5,15 +5,15 @@
   "keywords": [],
   "main": "./main.js",
   "version": "1.0.0",
-  "author": "pacom",
+  "author": "pacome.raisin",
   "scripts": {
     "start": "electron ."
   },
   "dependencies": {
     "python-shell": "5.0.0",
-    "js": "0.1.0"
+    "fs.realpath": "1.0.0"
   },
   "devDependencies": {
-    "electron": "24.1.3"
+    "electron": "22.0.2"
   }
 }
