@@ -7,3 +7,5 @@ myInput.addEventListener("input", function() {
 //Lancement du scrypt pour crypter:
 
 //Lancement du scrypt pour décrypter:
+
+//Easter Egg BOR SYSTEM:

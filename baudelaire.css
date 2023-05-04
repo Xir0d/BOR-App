@@ -1,5 +1,9 @@
 body {
     animation: loading 1s 1;
+    font-family: 'Montserrat', sans-serif;
+    cursor: default;
+    overflow: hidden; /*empeche de descendre la page*/
+    user-select: none; /*empeche de selectionner du texte*/
 }
 
 

@@ -1,7 +1,53 @@
 body {
   background-color: #101728;
   animation: loading 1s 1;
+  font-family: 'Montserrat', sans-serif;
+  cursor: default;
+  overflow: hidden; /*empeche de descendre la page*/
+  user-select: none; /*empeche de selectionner du texte*/
 }
+
+.title {
+  position: relative;
+  top: 3vh;
+}
+
+.logo {
+  margin-left: 5vh;
+  display: inline-block;
+  background-image: url("nikola.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.boutons {
+  text-align: left;
+  margin-left: 15vh;
+  position: relative;
+  top: 70vh;
+
+}
+
+.baudelaire {
+  width: 22vh;
+  height: 4vh;
+  font-size: 2vh;
+  border-radius: 5vh;
+  border: 0.2vh solid black;
+}
+
+
+.albanais {
+  width: 22vh;
+  height: 4vh;
+  margin-left: 5vh;
+  font-size: 2vh;
+  border-radius: 5vh;
+  border: 0.2vh solid black;
+}
+
+
+
 
 
 /*Animations:*/
