@@ -79,6 +79,13 @@ app_title {
     outline: none;
 }
 
+.export {
+    margin-left: 3vh;
+    border-radius: 1vh;
+    color: #242424;
+    background: white;
+}
+
 .button {
     text-align: center;
 }

@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 //Obligation d'ecriture en majuscule dans le champs pour saisir la clé:
 let myInput = document.getElementById("key");
 myInput.addEventListener("input", function() {
@@ -10,7 +8,7 @@ myInput.addEventListener("input", function() {
 //Envoie des variables dans le fichier json:
 let exportButton = document.getElementById("export");
 exportButton.addEventListener("click", function() {
-  
+  console.log('validation ça marche')
 
 // Les variables à stocker dans le fichier
   const data = {
