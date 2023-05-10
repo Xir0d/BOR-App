@@ -1,9 +1,10 @@
 body {
-    animation: loading 1s 1;
-    font-family: 'Montserrat', sans-serif;
-    cursor: default;
-    overflow: hidden; /*empeche de descendre la page*/
-    user-select: none; /*empeche de selectionner du texte*/
+  background-image: radial-gradient(circle, #121212, #2b1b2d, #531a39, #7b1430, #962311);
+  animation: loading 1s 1;
+  font-family: 'Montserrat', sans-serif;
+  cursor: default;
+  overflow: hidden; /*empeche de descendre la page*/
+  user-select: none; /*empeche de selectionner du texte*/
 }
 
 
