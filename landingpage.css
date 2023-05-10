@@ -23,6 +23,12 @@ body {
   margin-right: 40vh;
 }
 
+.question {
+  align-items: center;
+  height: 1vh;
+  width: 1vh;
+}
+
 .boutons {
   text-align: center;
   position: relative;
