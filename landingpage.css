@@ -1,43 +1,98 @@
 body {
   background-image: radial-gradient(circle, #121212, #2b1b2d, #531a39, #7b1430, #962311);
-    animation: loading 1s 1;
-    font-family: 'Montserrat', sans-serif;
-    cursor: default;
-    overflow: hidden; /*empeche de descendre la page*/
-    user-select: none; /*empeche de selectionner du texte*/
+  font-family: 'Montserrat', sans-serif;
+  animation: loading 1s 1;
+  cursor: default;
+  overflow: hidden; /*empeche de descendre la page*/
+  user-select: none; /*empeche de selectionner du texte*/
 }
 
 .title {
-  position: relative;
+  background: #121212;
+  border-radius: 10px;
   top: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5vh;
+  word-spacing: 10px;
+  padding: 2vh;
+  margin-top: 2vh;
+  margin-left: 40vh;
+  margin-right: 40vh;
 }
 
 .boutons {
-  text-align: left;
-  margin-left: 15vh;
+  text-align: center;
   position: relative;
-  top: 70vh;
+  height: 80vh;
+  margin-top: 2vh;
 
 }
 
+.boutonsbis {
+  position: relative;
+  margin-top: 18vh;
+}
+
 .baudelaire {
-  width: 22vh;
-  height: 4vh;
-  font-size: 2vh;
+  width: 45vh;
+  height: 45vh;
+  font-size: 5vh;
   border-radius: 5vh;
   border: 0.2vh solid black;
+  background: #121212;
+  color: #D39D57;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.baudelaire:hover {
+  opacity: 40%;
+  transform: scale(0.95);
+  box-shadow: 0px 0px 30px 10px #121212;
+  border: transparent;
 }
 
 
 .albanais {
-  width: 22vh;
-  height: 4vh;
-  margin-left: 5vh;
-  font-size: 2vh;
+  width: 45vh;
+  height: 45vh;
+  font-size: 5vh;
+  border-radius: 5vh;
+  margin-left: 15vh;
+  font-size: 5vh;
   border-radius: 5vh;
   border: 0.2vh solid black;
+  background: #121212;
+  color: #D39D57;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
+.albanais:hover {
+  opacity: 40%;
+  transform: scale(0.95);
+  border: transparent;
+  box-shadow: 0px 0px 30px 10px #121212;
+}
+
+footer {
+  background-color: #121212;
+  height: 6.5%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.copyright {
+  color: white;
+  text-align: center;
+  padding-top: 1.25%;
+  font-size: 1.5vh;
+}
 
 
 
