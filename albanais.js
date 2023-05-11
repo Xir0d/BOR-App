@@ -1,4 +1,4 @@
-var fs = require('fs-extra');
+
 
 //Obligation d'ecriture en majuscule dans le champs pour saisir la clé:
 let myInputs = document.getElementsByClassName("inputCle");
