@@ -21,6 +21,7 @@ body {
   margin-top: 2vh;
   margin-left: 40vh;
   margin-right: 40vh;
+  border: 1px solid black;
 }
 
 .question {
@@ -34,7 +35,7 @@ body {
   margin-right: 70vh;
   padding: 1vh;
   font-size: 5vh;
-  border: 1px solid transparent;
+  border: 1px solid black;
 }
 .boutonQuestion {
   background: none;
@@ -51,8 +52,8 @@ body {
 .boutons {
   text-align: center;
   position: relative;
-  height: 80vh;
   margin-top: 2vh;
+  height: 80vh;
 
 }
 

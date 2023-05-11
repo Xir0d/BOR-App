@@ -5,6 +5,7 @@ body {
     cursor: default;
     overflow: hidden; /*empeche de descendre la page*/
     user-select: none; /*empeche de selectionner du texte*/
+    z-index: 1;
 }
 
 .retour {
@@ -58,34 +59,93 @@ app_title {
     padding: 1.5vh;
     margin: 3vh;
     box-shadow: 3px 10px 10px 0px #121212;
-    margin-left: 40vh;
-    margin-right: 40vh;
+    margin-left: 60vh;
+    margin-right: 60vh;
     border: 0.2vh solid black;
 }
 
-.key {
+.inputs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.cle {
     border-radius: 10px;
     padding: 1vh;
-    background-color: white;
-    margin-right: 5vh;
-    padding-right: 2vh;
+    background-color: #121212;
     border: none;
     outline: none;
+    cursor: pointer;
+    color: white;
+    font-size: 2vh;
+    border: 1px solid transparent;
 }
+
+.cle:hover {
+    border: 1px solid #4c4c4c;
+}
+
+.inputCle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3vh;
+    outline: none;
+    text-decoration: none;
+}
+
 
 .message {
     border-radius: 10px;
     padding: 1vh;
-    background-color: white;
+    background-color: #121212;
     border: none;
     outline: none;
+    cursor: pointer;
+    color: white;
+    font-size: 2vh;
+    margin-left: 2vh;
+    border: 1px solid transparent;
+}
+
+.message:hover {
+    border: 1px solid #4c4c4c;
+}
+
+.inputMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vh;
+    outline: none;
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #c7c7c7;
+    text-decoration: none;
 }
 
 .export {
-    margin-left: 3vh;
-    border-radius: 1vh;
-    color: #242424;
-    background: white;
+    border-radius: 10px;
+    padding: 1vh;
+    background-color: #303030;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    margin-left: 5vh;
+    font-size: 2vh;
+    border: 1px solid transparent;
+}
+
+.export:hover {
+    border: 1px solid #4c4c4c;
 }
 
 .button {
@@ -94,7 +154,7 @@ app_title {
 
 .crypt {
     color: #D39D57;
-    background-color: #242424;
+    background-color: #303030;
     font-size: 5vh;
     border-radius: 15px;
     margin-right: 15vh;
@@ -109,7 +169,7 @@ app_title {
 
 .decrypt {
     color: #D39D57;
-    background-color: #242424;
+    background-color: #303030;
     font-size: 5vh;
     border-radius: 15px;
     cursor: pointer;
@@ -136,9 +196,6 @@ footer {
     padding-top: 1.25%;
     font-size: 1.5vh;
 }
-
-
-
 
 /*Animations:*/
 

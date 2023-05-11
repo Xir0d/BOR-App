@@ -1,35 +1,66 @@
 //Obligation d'ecriture en majuscule dans le champs pour saisir la clé:
-let myInput = document.getElementById("key");
-myInput.addEventListener("input", function() {
-  this.value = this.value.toUpperCase();
-});
+let myInputs = document.getElementsByClassName("inputCle");
+for (let i = 0; i < myInputs.length; i++) {
+  myInputs[i].addEventListener("input", function() {
+    this.value = this.value.toUpperCase();
+  });
+}
 
-
-//Envoie des variables dans le fichier json:
-let exportButton = document.getElementById("export");
-exportButton.addEventListener("click", function() {
-  console.log('validation ça marche')
 
 // Les variables à stocker dans le fichier
-  const data = {
-    name: "John Doe",
-    age: 30,
-    city: "Paris"
-};
+let cléDeChiffrement = "";
+let messageAChiffrer = "";
+
+//OUVERTURE page clé de chiffrement:
+const boutonCle = document.querySelectorAll('.cle');
+const divInputs = document.querySelector('.inputs');
+const inputCle = document.querySelector('.inputCle');
+const inputMessage = document.querySelector('.inputMessage');
+
+boutonCle.forEach(function(bouton) {
+  bouton.addEventListener('click', function() {
+    divInputs.style.display = 'block';
+    inputCle.style.display = 'block';
+    inputMessage.style.display = 'none';
+    inputCle.addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        cléDeChiffrement = inputCle.value;
+        console.log(cléDeChiffrement);
+        divInputs.style.display = 'none';
+      }
+    });
+  });
+});
+
+//OUVERTURE page message:
+var boutonMessage = document.querySelectorAll('.message');
+
+boutonMessage.forEach(function(bouton) {
+  bouton.addEventListener('click', function() {
+    divInputs.style.display = 'block';
+    inputCle.style.display = 'none';
+    inputMessage.style.display = 'block';
+    inputMessage.addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        messageAChiffrer = inputMessage.value;
+        console.log(messageAChiffrer);
+        divInputs.style.display = 'none';
+      }
+    });
+  });
+});
+
+//Envoie des variables dans le fichier json:
+
+
+
+
 
 // Convertir les variables en chaîne JSON
-  const jsonData = JSON.stringify(data);
+
 
 // Écrire les données dans le fichier
-  fs.writeFile('./code/data.json', jsonData, 'utf8', (err) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log("Les données ont été écrites dans le fichier !");
-  });
 
-});
 
 //Lancement du scrypt pour crypter:
 
