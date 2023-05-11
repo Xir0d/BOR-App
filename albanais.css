@@ -1,5 +1,5 @@
 body {
-    background-image: radial-gradient(circle, #121212, #2b1b2d, #531a39, #7b1430, #962311);
+    background: #202020;
     animation: loading 1s 1;
     font-family: 'Montserrat', sans-serif;
     cursor: default;
@@ -15,7 +15,7 @@ body {
     margin-bottom: 2vh;
     font-size: 2vh;
     cursor: pointer;
-    border: 0.2vh solid grey;
+    border: 1px solid grey;
 }
 
 .retour:hover {
@@ -31,7 +31,9 @@ app_title {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0.2vh solid black;
+    border: 1px solid black;
+    margin-left: 5vh;
+    margin-right: 5vh;
 }
 
 .emoji1 {
@@ -97,15 +99,12 @@ app_title {
     border-radius: 15px;
     margin-right: 15vh;
     cursor: pointer;
-    border: 0.2vh solid black;
-    transition: 0.5s;
+    border: 1px solid black;
     
 }
 
 .crypt:hover {
-    color: white;
-    background: transparent;
-    transform: scale(1.1);
+    border: 1px solid #4c4c4c;
 }
 
 .decrypt {
@@ -114,14 +113,11 @@ app_title {
     font-size: 5vh;
     border-radius: 15px;
     cursor: pointer;
-    border: 0.2vh solid black;
-    transition: 0.5s;
+    border: 1px solid black;
 }
 
 .decrypt:hover {
-    color: white;
-    background: transparent;
-    transform: scale(1.1);
+    border: 1px solid #4c4c4c;
 }
 
 

@@ -1,10 +1,10 @@
 body {
-  background-image: radial-gradient(circle, #121212, #2b1b2d, #531a39, #7b1430, #962311);
   font-family: 'Montserrat', sans-serif;
   animation: loading 1s 1;
   cursor: default;
   overflow: hidden; /*empeche de descendre la page*/
   user-select: none; /*empeche de selectionner du texte*/
+  background-color: #202020;
 }
 
 .title {
@@ -24,9 +24,28 @@ body {
 }
 
 .question {
+  background: #121212;
+  border-radius: 10px;
+  justify-content: center;
   align-items: center;
-  height: 1vh;
-  width: 1vh;
+  display: flex;
+  margin-top: 5vh;
+  margin-left: 70vh;
+  margin-right: 70vh;
+  padding: 1vh;
+  font-size: 5vh;
+  border: 1px solid transparent;
+}
+.boutonQuestion {
+  background: none;
+  color: #D39D57;
+  font-size: 5vh;
+  cursor: pointer;
+  border: transparent;
+}
+
+.question:hover {
+  border: 1px solid #4c4c4c;
 }
 
 .boutons {
@@ -39,7 +58,7 @@ body {
 
 .boutonsbis {
   position: relative;
-  margin-top: 18vh;
+  margin-top: 5vh;
 }
 
 .baudelaire {
@@ -51,14 +70,10 @@ body {
   background: #121212;
   color: #D39D57;
   cursor: pointer;
-  transition: 0.5s;
 }
 
 .baudelaire:hover {
-  opacity: 40%;
-  transform: scale(0.95);
-  box-shadow: 0px 0px 30px 10px #121212;
-  border: transparent;
+  border: 1px solid #4c4c4c;
 }
 
 
@@ -74,14 +89,10 @@ body {
   background: #121212;
   color: #D39D57;
   cursor: pointer;
-  transition: 0.5s;
 }
 
 .albanais:hover {
-  opacity: 40%;
-  transform: scale(0.95);
-  border: transparent;
-  box-shadow: 0px 0px 30px 10px #121212;
+  border: 1px solid #4c4c4c;
 }
 
 footer {
