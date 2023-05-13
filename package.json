@@ -14,7 +14,7 @@
     "brython": "^3.11.2",
     "fs": "^0.0.1-security",
     "jsonfile": "6.1.0",
-    "python-shell": "5.0.0"
+    "python-shell": "^5.0.0"
   },
   "devDependencies": {
     "electron": "22.0.2"

@@ -27,7 +27,7 @@ time.sleep(0.5)
 
 
 #Importation de la clé privée de codage
-private_key = open('clé privé.key')
+private_key = open('data.json')
 private_key = private_key.read()
 
 #Définition de la longueur de la clé privée pour calculer ensuite combien avons-nous besoin de la copier

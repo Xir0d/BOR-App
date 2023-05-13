@@ -24,6 +24,9 @@ boutonCle.forEach(function(bouton) {
     divInputs.style.display = 'block';
     inputCle.style.display = 'block';
     inputMessage.style.display = 'none';
+    //Ecriture automatique dans la zone au chargement:
+    inputCle.focus();
+    //Validation par touche  entree:
     inputCle.addEventListener("keyup", function(event) {
       if (event.key === "Enter") {
         cléDeChiffrement = inputCle.value;
@@ -41,6 +44,9 @@ boutonMessage.forEach(function(bouton) {
     divInputs.style.display = 'block';
     inputCle.style.display = 'none';
     inputMessage.style.display = 'block';
+    //Ecriture automatique dans la zone au chargement:
+    inputMessage.focus();
+    //Validation par touche  entree:
     inputMessage.addEventListener("keyup", function(event) {
       if (event.key === "Enter") {
         messageAChiffrer = inputMessage.value;
@@ -48,6 +54,12 @@ boutonMessage.forEach(function(bouton) {
       }
     });
   });
+});
+//Empechement du retour à la ligne avec la TOUCHE ENTREE (sinon probleme avec valeur json du msg):
+inputMessage.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+  }
 });
 
 //Envoie des variables dans le fichier json AVEC LE BOUTON VALIDER:
@@ -58,29 +70,26 @@ exportButton.addEventListener('click', function() {
     'cléDeChiffrement': cléDeChiffrement,
     'messageAChiffrer': messageAChiffrer
   };
+  // Convertir les variables en chaîne JSON
   const jsonData = JSON.stringify(dataExport);
-  fs.writeFile('code/data.json', jsonData, function(err) {
-    if (err) {
-      console.error('Erreur lors de l\'écriture du fichier : ', err);
-    } else {
-      console.log('Fichier JSON créé avec succès.');
-    }
-  });
+  // Écrire les données dans le fichier
+  window.fs.fsWrite('code/data.json', jsonData)
+});
+
+//Lancement du scrypt pour crypter Avec BOUTON CRYPTER:
+var cryptButton = document.querySelector('.crypt');
+
+cryptButton.addEventListener('click', function() {
+  
+});
+
+//Lancement du scrypt pour décrypter Avec BOUTON DECRYPTER:
+var decryptButton = document.querySelector('.decrypt');
+
+exportButton.addEventListener('click', function() {
+  
 });
 
 
-
-
-
-// Convertir les variables en chaîne JSON
-
-
-// Écrire les données dans le fichier
-
-
-//Lancement du scrypt pour crypter:
-
-
-//Lancement du scrypt pour décrypter:
 
 //Easter Egg BOR SYSTEM:
