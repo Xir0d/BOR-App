@@ -13,9 +13,9 @@
     </div>
   <body>
     <div class="champs">
-      <button class="cle">CLE DE CHIFFREMENT</button>
-      <button class="message">MESSAGE</button>
-      <button class="export" id="export">Valider</button>
+      <button class="cle" title="Entrer la clé de chiffrement">CLE DE CHIFFREMENT</button>
+      <button class="message" title="Entrer le messsage à chiffrer">MESSAGE</button>
+      <button class="export" id="export" title="Envoie les variables dans le fichier data.json">Valider</button>
     </div>
 
       <div class="inputs">
@@ -24,8 +24,22 @@
       </div>
 
       <div class="button">
-        <button class="crypt" id="crypt">⚙️Crypter</button>
-        <button class="decrypt" id="decrypt">✂️Décrypter</button>
+        <button class="crypt" id="crypt" title="Éxecute le fichier crypt.py">⚙️Crypter</button>
+        <button class="decrypt" id="decrypt" title="Éxecute le fichier decrypt.py">✂️Décrypter</button>
+      </div>
+
+      <div class="results">
+        <div class="resultTitle"> RÉSULTATS </div>
+          <div class="resultsContainer">
+            <div class="titles">
+              <div class="indicatif1Title" title="Correspond à la somme des valeurs des lettres dans l'Alphabet (Exemple: A=1, B=2, etc...)">1er Indicatif :<span class="indicatif1"></span></div>
+              <div class="indicatif2Title" title="Correspond au nombre de caractères dans le message">2ème Indicatif :<span class="indicatif2"></span></div>
+              <div class="messageChiffreTitle">Message Chiffré :</div>
+            </div>
+            <div class="messageChiffreDiv">
+              <textarea rows="10" cols="45" class="messageChiffreArea" placeholder="Voici le Message Chiffré:" readonly></textarea>
+            </div>
+          </div>
       </div>
 
     <footer>

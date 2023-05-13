@@ -17,6 +17,7 @@ body {
     font-size: 2vh;
     cursor: pointer;
     border: 1px solid grey;
+    outline: none;
 }
 
 .retour:hover {
@@ -77,8 +78,7 @@ app_title {
 .cle {
     border-radius: 10px;
     padding: 1vh;
-    background-color: #121212;
-    border: none;
+    background-color: #303030;
     outline: none;
     cursor: pointer;
     color: white;
@@ -104,8 +104,7 @@ app_title {
 .message {
     border-radius: 10px;
     padding: 1vh;
-    background-color: #121212;
-    border: none;
+    background-color: #303030;
     outline: none;
     cursor: pointer;
     color: white;
@@ -134,14 +133,14 @@ app_title {
 .export {
     border-radius: 10px;
     padding: 1vh;
-    background-color: #303030;
-    border: none;
+    background-color: #121212;
     outline: none;
     cursor: pointer;
     color: white;
     margin-left: 5vh;
     font-size: 2vh;
     border: 1px solid transparent;
+    width: 13vh;
 }
 
 .export:hover {
@@ -180,6 +179,89 @@ app_title {
     border: 1px solid #4c4c4c;
 }
 
+.results {
+    background-color: #242424;
+    text-align: center;
+    border-radius: 18px;
+    padding: 1.5vh;
+    margin: 3vh;
+    box-shadow: 3px 10px 10px 0px #121212;
+    margin-left: 45vh;
+    margin-right: 45vh;
+    border: 0.2vh solid black;
+    height: 35vh;
+}
+
+.resultTitle {
+    border-radius: 10px;
+    padding: 1vh;
+    background-color: #303030;
+    color: white;
+    border: 1px solid transparent;
+    font-size: 2vh;
+    margin-left: 35vh;
+    margin-right: 35vh;
+}
+
+.resultsContainer {
+    display: flex;
+    margin-top: 2vh;
+    justify-content: center;
+}
+
+.indicatif1Title {
+    padding: 1vh;
+    background-color: #303030;
+    color: grey;
+    font-size: 2vh;
+    border: 1px solid black;
+    width: 20vh;
+    margin-top: 5vh;
+}
+
+.indicatif1 {
+    color: white;
+}
+
+.indicatif2Title {
+    padding: 1vh;
+    background-color: #303030;
+    color: grey;
+    font-size: 2vh;
+    border: 1px solid black;
+    width: 20vh;
+    margin-top: 2vh;
+}
+
+.indicatif2 {
+    color: white;
+}
+
+.messageChiffreTitle {
+    padding: 1vh;
+    background-color: #303030;
+    color: grey;
+    font-size: 2vh;
+    border: 1px solid black;
+    width: 20vh;
+    margin-top: 2vh;
+}
+
+.messageChiffreDiv {
+    padding: 1vh;
+    background-color: #303030;
+    border: 1px solid black;
+    margin-left: 12.5vh;
+}
+
+.messageChiffreArea {
+    font-size: 2vh;
+    outline: none;
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #c7c7c7;
+    text-decoration: none;
+}
 
 footer {
     background-color: #121212;

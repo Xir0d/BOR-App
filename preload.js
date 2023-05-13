@@ -21,24 +21,38 @@ const { contextBridge } = require('electron')
 const fs = require('fs')
 const { PythonShell } = require('python-shell');
 
+//ECRIRE ET LIRE DANS FICHIER JSON:
 contextBridge.exposeInMainWorld('fs', {
-    fsWrite: function fsWrite(path, jsonData) { 
-        fs.writeFile(path, jsonData, function(err) {
-        if (err) {
-            console.error('Erreur lors de l\'écriture du fichier : ', err);
-        } else {
-            console.log('Fichier JSON créé avec succès.');
+    fsWrite: function fsWrite(path, jsonData) {
+      const contenuFichier = fs.readFileSync(path, 'utf-8');
+      const data = JSON.parse(contenuFichier);
+      data.nouvelleVariable = 'Valeur de la nouvelle variable';
+      const nouvelleContenuFichier = JSON.stringify(data);
+      fs.writeFileSync('data.json', nouvelleContenuFichier, 'utf-8');
+    },
+    fsRead: function fsRead(path, callback) {
+      fs.readFile(path, 'utf8', (error, data) => {
+        if (error) {
+          console.error('Erreur lors de la lecture du fichier JSON:', error);
+          return;
         }
-    })}
+        callback(data);
+      });
+    }
 })
 
-contextBridge.exposeInMainWorld('fs', {
-  fsWrite: function fsWrite(path, jsonData) { 
-      fs.writeFile(path, jsonData, function(err) {
-      if (err) {
-          console.error('Erreur lors de l\'écriture du fichier : ', err);
-      } else {
-          console.log('Fichier JSON créé avec succès.');
-      }
-  })}
+//LANCER SCRYPT PYTHON:
+contextBridge.exposeInMainWorld('pythonShell', {
+  launch: function launch(filePath) { 
+    PythonShell.run(filePath, null).then(messages=>{
+    });
+  }
 })
+
+/*fs.writeFile(path, jsonData, function(err) {
+  if (err) {
+      console.error('Erreur lors de l\'écriture du fichier : ', err);
+  } else {
+      console.log('Fichier JSON créé avec succès.');
+  }
+})}*/

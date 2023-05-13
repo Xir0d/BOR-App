@@ -1,5 +1,3 @@
-
-
 //Obligation d'ecriture en majuscule dans le champs pour saisir la clé:
 let myInputs = document.getElementsByClassName("inputCle");
 for (let i = 0; i < myInputs.length; i++) {
@@ -67,7 +65,7 @@ var exportButton = document.querySelector('.export');
 
 exportButton.addEventListener('click', function() {
   const dataExport = {
-    'cléDeChiffrement': cléDeChiffrement,
+    'cleDeChiffrement': cléDeChiffrement,
     'messageAChiffrer': messageAChiffrer
   };
   // Convertir les variables en chaîne JSON
@@ -80,16 +78,40 @@ exportButton.addEventListener('click', function() {
 var cryptButton = document.querySelector('.crypt');
 
 cryptButton.addEventListener('click', function() {
+  //EXECUTION DU FICHIER PYTHON:
+  window.pythonShell.launch('code/crypt.py')
   
+  //CREATION DE LA FONCTION CALLBACK:
+  function fsReadResult(data) {
+    resultat = data;
+    console.log(resultat);
+    const jsonData = JSON.parse(resultat);
+    const indicatif1Resultat = jsonData.indicatif1;
+    const indicatif2Resultat = jsonData.indicatif2;
+    const messageChiffreResultat = jsonData.message;
+    //Affichage des résultats:
+    var indicatif1Div = document.querySelector('.indicatif1');
+    var indicatif2Div = document.querySelector('.indicatif2');
+    var messageChiffreDiv = document.querySelector('.messageChiffreArea');
+
+    indicatif1Div.textContent = ' ' + indicatif1Resultat;
+    indicatif2Div.textContent = ' ' + indicatif2Resultat;
+    messageChiffreDiv.textContent = ' ' + messageChiffreResultat;
+  }
+  //RECUPERATION des DONNEES AU PRES DE DATA.JSON
+  window.fs.fsRead('code/data.json', fsReadResult);
 });
 
 //Lancement du scrypt pour décrypter Avec BOUTON DECRYPTER:
 var decryptButton = document.querySelector('.decrypt');
 
-exportButton.addEventListener('click', function() {
-  
+decryptButton.addEventListener('click', function() {
 });
 
+//Input message pour decrypt = meme input que pour crypt
 
+//Au moment de decrypt, verifier les indicatifs
 
-//Easter Egg BOR SYSTEM:
+//Valider les indicatifs via des variables dans le fichier python.
+
+//exemple: verif_indicatif1 = 0 pas d'erreur = 1 erreur.
