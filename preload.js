@@ -23,12 +23,13 @@ const { PythonShell } = require('python-shell');
 
 //ECRIRE ET LIRE DANS FICHIER JSON:
 contextBridge.exposeInMainWorld('fs', {
-    fsWrite: function fsWrite(path, jsonData) {
+    fsWrite: function fsWrite(path, cleDeChiffrement, messageAChiffrer) {
       const contenuFichier = fs.readFileSync(path, 'utf-8');
       const data = JSON.parse(contenuFichier);
-      data.nouvelleVariable = 'Valeur de la nouvelle variable';
+      data.cleDeChiffrement = cleDeChiffrement;
+      data.messageAChiffrer = messageAChiffrer;
       const nouvelleContenuFichier = JSON.stringify(data);
-      fs.writeFileSync('data.json', nouvelleContenuFichier, 'utf-8');
+      fs.writeFileSync(path, nouvelleContenuFichier, 'utf-8');
     },
     fsRead: function fsRead(path, callback) {
       fs.readFile(path, 'utf8', (error, data) => {
@@ -48,11 +49,3 @@ contextBridge.exposeInMainWorld('pythonShell', {
     });
   }
 })
-
-/*fs.writeFile(path, jsonData, function(err) {
-  if (err) {
-      console.error('Erreur lors de l\'écriture du fichier : ', err);
-  } else {
-      console.log('Fichier JSON créé avec succès.');
-  }
-})}*/

@@ -8,7 +8,7 @@ for (let i = 0; i < myInputs.length; i++) {
 
 
 // Les variables à stocker dans le fichier
-let cléDeChiffrement = "";
+let cleDeChiffrement = "";
 let messageAChiffrer = "";
 
 //OUVERTURE page clé de chiffrement:
@@ -27,7 +27,7 @@ boutonCle.forEach(function(bouton) {
     //Validation par touche  entree:
     inputCle.addEventListener("keyup", function(event) {
       if (event.key === "Enter") {
-        cléDeChiffrement = inputCle.value;
+        cleDeChiffrement = inputCle.value;
         divInputs.style.display = 'none';
       }
     });
@@ -64,23 +64,20 @@ inputMessage.addEventListener('keydown', function(event) {
 var exportButton = document.querySelector('.export');
 
 exportButton.addEventListener('click', function() {
-  const dataExport = {
-    'cleDeChiffrement': cléDeChiffrement,
-    'messageAChiffrer': messageAChiffrer
-  };
-  // Convertir les variables en chaîne JSON
-  const jsonData = JSON.stringify(dataExport);
   // Écrire les données dans le fichier
-  window.fs.fsWrite('code/data.json', jsonData)
+  window.fs.fsWrite('code/data.json', cleDeChiffrement, messageAChiffrer)
+  window.pythonShell.launch('code/crypt.py')
+  window.pythonShell.launch('code/decrypt.py')
 });
 
 //Lancement du scrypt pour crypter Avec BOUTON CRYPTER:
 var cryptButton = document.querySelector('.crypt');
 
 cryptButton.addEventListener('click', function() {
-  //EXECUTION DU FICHIER PYTHON:
-  window.pythonShell.launch('code/crypt.py')
-  
+
+//APPARITION DIV RESULTAT 🎁🎁🎁🎁🎁🎁🎁🎁🎁
+
+
   //CREATION DE LA FONCTION CALLBACK:
   function fsReadResult(data) {
     resultat = data;
@@ -88,7 +85,7 @@ cryptButton.addEventListener('click', function() {
     const jsonData = JSON.parse(resultat);
     const indicatif1Resultat = jsonData.indicatif1;
     const indicatif2Resultat = jsonData.indicatif2;
-    const messageChiffreResultat = jsonData.message;
+    const messageChiffreResultat = jsonData.messageCrypte;
     //Affichage des résultats:
     var indicatif1Div = document.querySelector('.indicatif1');
     var indicatif2Div = document.querySelector('.indicatif2');
@@ -107,6 +104,12 @@ var decryptButton = document.querySelector('.decrypt');
 
 decryptButton.addEventListener('click', function() {
 });
+
+
+//BOUTON VALIDER LANCE LE FICHIER CRYPT ET DECRYPT
+
+//LE BOUTON CRYPT OU DECRYPT AFFICHE SEULEMENT LE RESULTAT EN ALLANT CHERCHER LES VARIABLES SOUHAITEES
+//faire apparition et disparition des divs en haut 
 
 //Input message pour decrypt = meme input que pour crypt
 
