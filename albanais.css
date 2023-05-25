@@ -141,6 +141,7 @@ app_title {
     font-size: 2vh;
     border: 1px solid transparent;
     width: 13vh;
+    animation: clignotement 0.8s infinite;
 }
 
 .export:hover {
@@ -287,5 +288,14 @@ footer {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes clignotement {
+  0% {
+    background-color: #121212;
+  }
+  100% {
+    background-color: #4e4e4e;
   }
 }

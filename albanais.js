@@ -61,6 +61,7 @@ inputMessage.addEventListener('keydown', function(event) {
 });
 
 //Envoie des variables dans le fichier json AVEC LE BOUTON VALIDER:
+//BOUTON VALIDER LANCE LE FICHIER CRYPT ET DECRYPT
 var exportButton = document.querySelector('.export');
 
 exportButton.addEventListener('click', function() {
@@ -70,13 +71,9 @@ exportButton.addEventListener('click', function() {
   window.pythonShell.launch('code/decrypt.py')
 });
 
-//Lancement du scrypt pour crypter Avec BOUTON CRYPTER:
+//AFFICHAGE DES RESULTATS DU BOUTON CRYPT:
 var cryptButton = document.querySelector('.crypt');
-
 cryptButton.addEventListener('click', function() {
-
-//APPARITION DIV RESULTAT 🎁🎁🎁🎁🎁🎁🎁🎁🎁
-
 
   //CREATION DE LA FONCTION CALLBACK:
   function fsReadResult(data) {
@@ -99,14 +96,12 @@ cryptButton.addEventListener('click', function() {
   window.fs.fsRead('code/data.json', fsReadResult);
 });
 
-//Lancement du scrypt pour décrypter Avec BOUTON DECRYPTER:
+
+//AFFICHAGE DES RESULTATS DU BOUTON CRYPT:
 var decryptButton = document.querySelector('.decrypt');
 
 decryptButton.addEventListener('click', function() {
 });
-
-
-//BOUTON VALIDER LANCE LE FICHIER CRYPT ET DECRYPT
 
 //LE BOUTON CRYPT OU DECRYPT AFFICHE SEULEMENT LE RESULTAT EN ALLANT CHERCHER LES VARIABLES SOUHAITEES
 //faire apparition et disparition des divs en haut 
