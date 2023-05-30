@@ -18,7 +18,7 @@ key_length = private_key
 key_count = int(count_letters(key_length))
 
 #Demande du message à chiffrer avec la clé privée
-message_a_chiffrer = data['messageAChiffrer']
+message_a_chiffrer = data['message']
 
 #Récupération du nombre de lettres à chiffrer dans le message pour définir le nombre de fois que nous avons besoin de la clé de chiffrement privée
 # (+) Division du nombre de caractère par la longueur de la clé de chiffrement privée

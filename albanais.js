@@ -1,3 +1,27 @@
+//SELECTION DES OPTIONS CRYPTER OU DECRYPTER VIA MENU DEROULANT:
+
+// Definition des éléments nécessaires:
+const menuDeroulant = document.querySelector('.selectionOption');
+const spanDecryptInputs = document.querySelector('.decryptInputs');
+const divChamps = document.querySelector('.champs');
+
+// Ajoutez un écouteur d'événement pour détecter le changement de sélection
+menuDeroulant.addEventListener("change", function() {
+  // Vérifiez quelle option est sélectionnée
+  var optionSelectionnee = menuDeroulant.value;
+  // Vérifiez la valeur de l'option sélectionnée
+  if (optionSelectionnee === "decrypt") {
+    spanDecryptInputs.style.display = 'inline';
+    divChamps.style.marginLeft = '35vh';
+    divChamps.style.marginRight = '35vh';
+  } else {
+    spanDecryptInputs.style.display = 'none';
+    divChamps.style.marginLeft = '50vh';
+    divChamps.style.marginRight = '50vh';
+  }
+});
+
+
 //Obligation d'ecriture en majuscule dans le champs pour saisir la clé:
 let myInputs = document.getElementsByClassName("inputCle");
 for (let i = 0; i < myInputs.length; i++) {
@@ -9,7 +33,7 @@ for (let i = 0; i < myInputs.length; i++) {
 
 // Les variables à stocker dans le fichier
 let cleDeChiffrement = "";
-let messageAChiffrer = "";
+let message = "";
 
 //OUVERTURE page clé de chiffrement:
 const boutonCle = document.querySelectorAll('.cle');
@@ -47,7 +71,7 @@ boutonMessage.forEach(function(bouton) {
     //Validation par touche  entree:
     inputMessage.addEventListener("keyup", function(event) {
       if (event.key === "Enter") {
-        messageAChiffrer = inputMessage.value;
+        message = inputMessage.value;
         divInputs.style.display = 'none';
       }
     });
@@ -66,7 +90,7 @@ var exportButton = document.querySelector('.export');
 
 exportButton.addEventListener('click', function() {
   // Écrire les données dans le fichier
-  window.fs.fsWrite('code/data.json', cleDeChiffrement, messageAChiffrer)
+  window.fs.fsWrite('code/data.json', cleDeChiffrement, message)
   window.pythonShell.launch('code/crypt.py')
   window.pythonShell.launch('code/decrypt.py')
 });

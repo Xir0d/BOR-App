@@ -13,8 +13,16 @@
     </div>
   <body>
     <div class="champs">
+      <select class="selectionOption">
+        <option value="crypt">Crypter un Message</option>
+        <option value="decrypt">Décrypter un Message</option>
+      </select>
       <button class="cle" title="Entrer la clé de chiffrement">CLE DE CHIFFREMENT</button>
       <button class="message" title="Entrer le messsage à chiffrer">MESSAGE</button>
+        <span class="decryptInputs">
+          <button class="indicatif1Input" title="Entrez le premier indicatif de securité">Indicatif 1</button>
+          <button class="indicatif2Input" title="Entrez le deuxième indicatif de securité">Indicatif 2</button>
+        </span>
       <button class="export" id="export" title="Envoie les variables dans le fichier data.json">Valider</button>
     </div>
 
