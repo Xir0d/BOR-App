@@ -136,11 +136,11 @@ app_title {
     text-decoration: none;
 }
 
-.decryptInputs {
+.decryptButtons {
     display: none;
 }
 
-.indicatif1Input {
+.indicatifButton {
     border-radius: 10px;
     padding: 1vh;
     background-color: #303030;
@@ -152,16 +152,34 @@ app_title {
     border: 1px solid transparent;
 }
 
-.indicatif2Input {
-    border-radius: 10px;
-    padding: 1vh;
-    background-color: #303030;
-    outline: none;
-    cursor: pointer;
-    color: white;
+.indicatifButton:hover {
+    border: 1px solid #4c4c4c;
+}
+
+.indicatif1Input {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    transform: translate(-50%, -50%);
     font-size: 2vh;
-    margin-left: 2vh;
-    border: 1px solid transparent;
+    outline: none;
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #c7c7c7;
+    text-decoration: none;
+}
+
+.indicatif2Input {
+    position: absolute;
+    top: 50%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    font-size: 2vh;
+    outline: none;
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #c7c7c7;
+    text-decoration: none;
 }
 
 .export {
@@ -191,10 +209,8 @@ app_title {
     background-color: #303030;
     font-size: 5vh;
     border-radius: 15px;
-    margin-right: 15vh;
     cursor: pointer;
     border: 1px solid black;
-    
 }
 
 .crypt:hover {
@@ -208,6 +224,7 @@ app_title {
     border-radius: 15px;
     cursor: pointer;
     border: 1px solid black;
+    display: none;
 }
 
 .decrypt:hover {

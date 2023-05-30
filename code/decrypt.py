@@ -1,17 +1,18 @@
 import string
 import time
-import subprocess
 import json
 
+#Importation de la clé privée de codage via le fichier json
+with open('code/data.json') as json_file:
+    data = json.load(json_file)
 
 #Définition des Variables:
 
-message_chiffre = input('Message à décoder: ')
-securite_1 = input('Sécurité 1: ')
-securite_2 = input('Sécurité 2: ')
+message_chiffre = data['message']
+securite_1 = data['indicatif1']
+securite_2 = data['indicatif2']
 
-private_key = open('clé privé.key')
-private_key = private_key.read()
+private_key = data['cleDeChiffrement']
 
 #Définition de la longueur de la clé privée pour calculer ensuite combien avons-nous besoin de la copier
 
@@ -64,7 +65,7 @@ key_chain = key_chain.replace('W', '23\n')
 key_chain = key_chain.replace('X', '24\n')
 key_chain = key_chain.replace('Y', '25\n')
 key_chain = key_chain.replace('Z', '26\n')
-key_chain_export = open('keychain.txt', 'w')
+key_chain_export = open('code/keychain.txt', 'w')
 key_chain_export = key_chain_export.write(key_chain)
 
 #Décalage des lettres selon la liste établie précedemment
@@ -173,15 +174,23 @@ if securite_1 == indicatif2:
 else:
     renée2 = 1
 
-if renée == 1 or renée2 == 1:
-    print('\033[101mMessage défectueux ❌\033[0m')
-    time.sleep(0.5)
-    print('Vous êtes un plébéien, merci de retenter votre chance')
-    time.sleep(1.5)
-    print('Je vais relancer le programme pour vous')
-    time.sleep(1.5)
-    print('Vous êtes inutile, patientez 3 secondes pour la peine')
-    time.sleep(3)
-    subprocess.call(['python', 'decrypt.py'])
+with open('code/data.json', 'r') as f:
+    contenu_fichier = json.load(f)
+
+if renée == 1:
+    contenu_fichier['messsageDecrypte'] = message_dechiffre
+    contenu_fichier['verif_indicatif2'] = 1
 else:
-    print('\033[102mMessage Complet 👌\033[0m')
+    contenu_fichier['messsageDecrypte'] = message_dechiffre
+    contenu_fichier['verif_indicatif2'] = 0
+
+if renée2 == 1:
+    contenu_fichier['messsageDecrypte'] = message_dechiffre
+    contenu_fichier['verif_indicatif1'] = 1
+else:
+    contenu_fichier['messsageDecrypte'] = message_dechiffre
+    contenu_fichier['verif_indicatif1'] = 0
+
+#Transcription du message chiffré dans le fichier data.json :
+with open('code/data.json', 'w') as f:
+    json.dump(contenu_fichier, f)

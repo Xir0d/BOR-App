@@ -23,11 +23,13 @@ const { PythonShell } = require('python-shell');
 
 //ECRIRE ET LIRE DANS FICHIER JSON:
 contextBridge.exposeInMainWorld('fs', {
-    fsWrite: function fsWrite(path, cleDeChiffrement, message) {
+    fsWrite: function fsWrite(path, cleDeChiffrement, message, indicatif1, indicatif2) {
       const contenuFichier = fs.readFileSync(path, 'utf-8');
       const data = JSON.parse(contenuFichier);
       data.cleDeChiffrement = cleDeChiffrement;
       data.message = message;
+      data.indicatif1 = indicatif1;
+      data.indicatif2 = indicatif2;
       const nouvelleContenuFichier = JSON.stringify(data);
       fs.writeFileSync(path, nouvelleContenuFichier, 'utf-8');
     },

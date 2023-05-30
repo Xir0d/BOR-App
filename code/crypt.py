@@ -3,13 +3,12 @@ import string
 from collections import Counter
 import json
 
-#Importation de la clé privée de codage
+#Importation de la clé privée de codage via le fichier json
 with open('code/data.json') as json_file:
     data = json.load(json_file)
 
-private_key = data['cleDeChiffrement']
-
 #Définition de la longueur de la clé privée pour calculer ensuite combien avons-nous besoin de la copier
+private_key = data['cleDeChiffrement']
 
 def count_letters(key_length):
     return len(key_length) - key_length.count(' ')
@@ -164,7 +163,7 @@ message_chiffre = message_chiffre + message_chiffre_tempo
 #Ajout du 2eme indicatif :
 indicatif2 = 0
 indicatif2 = str(indicatif2)
-longueur_message_chiffre = int(len(message_chiffre)) - int(len(indicatif2)) - 1
+longueur_message_chiffre = int(len(message_chiffre)) - int(len(indicatif2)) - int(len(indicatif))
 longueur_message_chiffre = str(longueur_message_chiffre)
 message_chiffre = message_chiffre + '-' + longueur_message_chiffre
 indicatif2 = longueur_message_chiffre
