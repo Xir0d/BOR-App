@@ -193,7 +193,7 @@ app_title {
     font-size: 2vh;
     border: 1px solid transparent;
     width: 13vh;
-    animation: clignotement 0.8s infinite;
+    animation: initial;
 }
 
 .export:hover {

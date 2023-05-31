@@ -1,3 +1,22 @@
+//QUAND CLIQUE SUR BOUTON VALIDER POUR EXPORTER, ARRET DU CLIGNOTEMENT:
+var exportButton = document.querySelector('.export');
+
+exportButton.addEventListener('click', function() {
+  exportButton.style.animation = 'none';
+});
+
+
+//QUAND JE FINIS DE REMPLIR LE MESSAGE, CLIGNOTEMENT DU BOUTON VALIDER POUR EXPORTER:
+var champsMessage = document.querySelector('.inputMessage');
+
+champsMessage.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    //CLIGNOTEMENT BOUTON VALIDER POUR INDIQUER QU'IL FAUT CLIQUER DESSUS:
+    exportButton.style.animation = 'clignotement 0.6s infinite';
+  }
+});
+
+
 //SELECTION DES OPTIONS CRYPTER OU DECRYPTER VIA MENU DEROULANT:
 
 // Definition des éléments nécessaires:
@@ -123,6 +142,7 @@ inputMessage.addEventListener('keydown', function(event) {
 
 //Ouverture Page Indicatifs:
 const boutonIndicatif = document.querySelectorAll('.indicatifButton');
+var exportButton = document.querySelector('.export');
 
 boutonIndicatif.forEach(function(boutonindicatif) {
   boutonindicatif.addEventListener('click', function() {
@@ -145,11 +165,11 @@ boutonIndicatif.forEach(function(boutonindicatif) {
         indicatif2 = indicatif2Input.value;
         indicatif1 = indicatif1Input.value;
         divInputs.style.display = 'none';
-        console.log(indicatif1+indicatif2);
       }
     });
   });
 });
+
 
 //Envoie des variables dans le fichier json AVEC LE BOUTON VALIDER:
 //BOUTON VALIDER LANCE LE FICHIER CRYPT ET DECRYPT
@@ -203,9 +223,19 @@ decryptButton.addEventListener('click', function() {
     var verifIndicatif2Div = document.querySelector('.verifIndicatif2');
     var messageDechiffreDiv = document.querySelector('.messageDechiffreArea');
 
-    verifIndicatif1Div.textContent = ' ' + verifIndicatif1;
-    verifIndicatif2Div.textContent = ' ' + verifIndicatif2;
     messageDechiffreDiv.textContent = ' ' + messageDechiffre;
+
+    if (verifIndicatif1 === 1) {
+      verifIndicatif1Div.textContent = ' ' + '❌';
+    } else {
+        verifIndicatif1Div.textContent = ' ' + '✅';
+    }
+
+    if (verifIndicatif2 === 1) {
+      verifIndicatif2Div.textContent = ' ' + '❌';
+    } else {
+        verifIndicatif2Div.textContent = ' ' + '✅';
+    }
   }
   //RECUPERATION des DONNEES AU PRES DE DATA.JSON
   window.fs.fsRead('code/data.json', fsReadResult);
