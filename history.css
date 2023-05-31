@@ -1,0 +1,45 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    animation: loading 1s 1;
+    cursor: default;
+    overflow: hidden; /*empeche de descendre la page*/
+    user-select: none; /*empeche de selectionner du texte*/
+    background-color: #202020;
+    background-image: url("fonts/logo.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: auto;
+  }
+
+  .retour {
+    outline: none;
+    color: #ffffff;
+    background-color: #121212;
+    border-radius: 0.5vh;
+    padding: 0.5vh;
+    margin-bottom: 2vh;
+    font-size: 2vh;
+    cursor: pointer;
+    border: 1px solid grey;
+  }
+  
+  .retour:hover {
+    color: grey;
+  }
+  
+  .title {
+    background: #121212;
+    border-radius: 10px;
+    top: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5vh;
+    word-spacing: 10px;
+    padding: 2vh;
+    margin-top: 2vh;
+    margin-left: 40vh;
+    margin-right: 40vh;
+    border: 1px solid black;
+  }
