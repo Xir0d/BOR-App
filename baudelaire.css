@@ -1,13 +1,15 @@
 body {
-  background-image: radial-gradient(circle, #121212, #2b1b2d, #531a39, #7b1430, #962311);
+  background: #202020;
   animation: loading 1s 1;
   font-family: 'Montserrat', sans-serif;
   cursor: default;
   overflow: hidden; /*empeche de descendre la page*/
   user-select: none; /*empeche de selectionner du texte*/
+  z-index: 1;
 }
 
 .retour {
+  outline: none;
   color: #ffffff;
   background-color: #121212;
   border-radius: 0.5vh;
@@ -15,7 +17,7 @@ body {
   margin-bottom: 2vh;
   font-size: 2vh;
   cursor: pointer;
-  border: 0.2vh solid grey;
+  border: 1px solid grey;
 }
 
 .retour:hover {
@@ -31,7 +33,64 @@ app_title {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  margin-left: 5vh;
+  margin-right: 5vh;
+}
+
+.emoji1 {
+  transition: 1s;
+}
+
+.emoji1:hover {
+  transform: scale(1.5);
+}
+
+.emoji2 {
+  transition: 5s;
+}
+.emoji2:hover {
+  transform: scale(10);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14vh;
+}
+
+.crypt {
+  width: 45vh;
+  height: 45vh;
+  font-size: 5vh;
+  border-radius: 5vh;
   border: 0.2vh solid black;
+  background: #121212;
+  color: #D39D57;
+  cursor: pointer;
+}
+
+.crypt:hover {
+  border: 1px solid #4c4c4c;
+}
+
+.decrypt {
+  width: 45vh;
+  height: 45vh;
+  font-size: 5vh;
+  border-radius: 5vh;
+  margin-left: 15vh;
+  font-size: 5vh;
+  border-radius: 5vh;
+  border: 0.2vh solid black;
+  background: #121212;
+  color: #D39D57;
+  cursor: pointer;
+}
+
+.decrypt:hover {
+  border: 1px solid #4c4c4c;
 }
 
 footer {
@@ -50,14 +109,22 @@ footer {
   font-size: 1.5vh;
 }
 
-
 /*Animations:*/
 
 @keyframes loading {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+}
+
+@keyframes clignotement {
+0% {
+  background-color: #121212;
+}
+100% {
+  background-color: #4e4e4e;
+}
 }

@@ -51,3 +51,25 @@ contextBridge.exposeInMainWorld('pythonShell', {
     });
   }
 })
+
+//LANCER UNE COMMANDE CMD:
+const { exec } = require('child_process');
+
+contextBridge.exposeInMainWorld('childProcess', {
+  startCmd: function startCmd(command) {
+    if (process.platform === 'win32') {
+      // Pour Windows
+      terminalCommand = `start cmd.exe /k "${command}"`;
+    } else {
+      // Pour d'autres plateformes (Linux, macOS, etc.)
+      // Vous pouvez utiliser d'autres commandes comme 'gnome-terminal', 'xterm', 'terminal', etc.
+      terminalCommand = `x-terminal-emulator -e "${command}"`;
+    }
+    
+    exec(terminalCommand, (error) => {
+      if (error) {
+        console.error(`Erreur lors de l'ouverture du terminal : ${error.message}`);
+      }
+    });
+  }
+})
