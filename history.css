@@ -43,3 +43,47 @@ body {
     margin-right: 40vh;
     border: 1px solid black;
   }
+
+  app_title {
+    color: #D24D38;
+    font-size: 6.5vh;
+    border-radius: 10px;
+    background-color: #121212;
+    padding: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin-left: 5vh;
+    margin-right: 5vh;
+  }
+
+  footer {
+    background-color: #121212;
+    height: 6.5%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .copyright {
+    color: white;
+    text-align: center;
+    padding-top: 1.25%;
+    font-size: 1.5vh;
+  }
+  
+  
+  
+  
+  /*Animations:*/
+  
+  @keyframes loading {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
