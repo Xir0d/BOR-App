@@ -17,7 +17,6 @@ body {
     background-color: #121212;
     border-radius: 0.5vh;
     padding: 0.5vh;
-    margin-bottom: 2vh;
     font-size: 2vh;
     cursor: pointer;
     border: 1px solid grey;
@@ -38,24 +37,20 @@ body {
     font-size: 5vh;
     word-spacing: 10px;
     padding: 2vh;
-    margin-top: 2vh;
     margin-left: 40vh;
     margin-right: 40vh;
     border: 1px solid black;
   }
 
-  app_title {
-    color: #D24D38;
-    font-size: 6.5vh;
-    border-radius: 10px;
-    background-color: #121212;
-    padding: 2vh;
+  .organigram {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    margin-left: 5vh;
-    margin-right: 5vh;
+    height: 80vh;
+  }
+
+  .orgaImage {
+    height: 75vh;
   }
 
   footer {
