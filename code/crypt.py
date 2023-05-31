@@ -4,7 +4,7 @@ from collections import Counter
 import json
 
 #Importation de la clé privée de codage via le fichier json
-with open('code/data.json') as json_file:
+with open('./resources/code/data.json') as json_file:
     data = json.load(json_file)
 
 #Définition de la longueur de la clé privée pour calculer ensuite combien avons-nous besoin de la copier
@@ -62,7 +62,7 @@ key_chain = key_chain.replace('W', '23\n')
 key_chain = key_chain.replace('X', '24\n')
 key_chain = key_chain.replace('Y', '25\n')
 key_chain = key_chain.replace('Z', '26\n')
-key_chain_export = open('code/keychain.txt', 'w')
+key_chain_export = open('./resources/code/keychain.txt', 'w')
 key_chain_export = key_chain_export.write(key_chain)
 
 #Ajout du premier indicatif:
@@ -144,7 +144,7 @@ def uncaesarize(text, shift):
 
 i = 0
 for element in message_a_chiffrer:
-  with open("code/keychain.txt") as f:
+  with open("./resources/code/keychain.txt") as f:
     data = f.readlines()[i]
     message_chiffre_tempo = str(message_chiffre_tempo) + (caesarize(element, int(data)))
     i = i + 1
@@ -172,12 +172,12 @@ indicatif2 = longueur_message_chiffre
 print('\033[0mVoici le message chiffré: ', '\033[93m', message_chiffre, '\033[0m')
 
 #Transcription du message chiffré dans le fichier data.json :
-with open('code/data.json', 'r') as f:
+with open('./resources/code/data.json', 'r') as f:
     contenu_fichier = json.load(f)
 
 contenu_fichier['messageCrypte'] = message_transcription
 contenu_fichier['indicatif1'] = indicatif
 contenu_fichier['indicatif2'] = indicatif2
 
-with open('code/data.json', 'w') as f:
+with open('./resources/code/data.json', 'w') as f:
     json.dump(contenu_fichier, f)

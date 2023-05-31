@@ -27,7 +27,7 @@ const boutonCrypt = document.querySelector('.crypt');
 const boutonDecrypt = document.querySelector('.decrypt');
 const resultsCrypt = document.querySelector('.resultsCrypt');
 const resultsDecrypt = document.querySelector('.resultsDecrypt');
-var scryptALancer = 'code/crypt.py'; //Car en arrivant sur la page, par defaut on est sur le menu crypt
+var scryptALancer = './resources/code/crypt.py'; //Car en arrivant sur la page, par defaut on est sur le menu crypt
 scryptCrypt = 0; 
 scryptDecrypt = 0;
 
@@ -59,14 +59,14 @@ menuDeroulant.addEventListener("change", function() {
   }
   //Choix du scrypt à lancer selon la selection actuelle du menu deroulant:
   if (scryptDecrypt === 1) {
-    scryptALancer = 'code/decrypt.py';
+    scryptALancer = './resources/code/decrypt.py';
   } else {
-    scryptALancer = 'code/crypt.py';
+    scryptALancer = './resources/code/crypt.py';
   }
   if (scryptCrypt === 1) {
-    scryptALancer = 'code/crypt.py';
+    scryptALancer = './resources/code/crypt.py';
   } else {
-    scryptALancer = 'code/decrypt.py';
+    scryptALancer = './resources/code/decrypt.py';
   }
 });
 
@@ -177,7 +177,7 @@ var exportButton = document.querySelector('.export');
 
 exportButton.addEventListener('click', function() {
   // Écrire les données dans le fichier
-  window.fs.fsWrite('code/data.json', cleDeChiffrement, message, indicatif1, indicatif2)
+  window.fs.fsWrite('./resources/code/data.json', cleDeChiffrement, message, indicatif1, indicatif2)
   window.pythonShell.launch(scryptALancer);
 });
 
@@ -202,7 +202,7 @@ cryptButton.addEventListener('click', function() {
     messageChiffreDiv.textContent = ' ' + messageChiffreResultat;
   }
   //RECUPERATION des DONNEES AU PRES DE DATA.JSON
-  window.fs.fsRead('code/data.json', fsReadResult);
+  window.fs.fsRead('./resources/code/data.json', fsReadResult);
 });
 
 
@@ -238,7 +238,7 @@ decryptButton.addEventListener('click', function() {
     }
   }
   //RECUPERATION des DONNEES AU PRES DE DATA.JSON
-  window.fs.fsRead('code/data.json', fsReadResult);
+  window.fs.fsRead('./resources/code/data.json', fsReadResult);
 });
 
 //PopUp indiquant qu'il n'y a pas de problemes avec les indicatifs -> utiliser les variables verif_indicatif dans data.json

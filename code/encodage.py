@@ -68,7 +68,7 @@ key_chain = key_chain.replace('W', '23\n')
 key_chain = key_chain.replace('X', '24\n')
 key_chain = key_chain.replace('Y', '25\n')
 key_chain = key_chain.replace('Z', '26\n')
-key_chain_export = open('code/keychain.txt', 'w')
+key_chain_export = open('./resources/code/keychain.txt', 'w')
 key_chain_export = key_chain_export.write(key_chain)
 
 #Indicatif deux
@@ -148,7 +148,7 @@ def uncaesarize(text, shift):
 message_chiffre = ''
 i = 0
 for element in message_a_chiffrer:
-  with open("code/keychain.txt") as f:
+  with open("./resources/code/keychain.txt") as f:
     data = f.readlines()[i]
     message_chiffre = str(message_chiffre) + (caesarize(element, int(data)))
     i = i + 1
