@@ -3,7 +3,7 @@ import time
 import json
 
 #Importation de la clé privée de codage via le fichier json
-with open('code/data.json') as json_file:
+with open('./resources/code/data.json') as json_file:
     data = json.load(json_file)
 
 #Définition des Variables:
@@ -65,7 +65,7 @@ key_chain = key_chain.replace('W', '23\n')
 key_chain = key_chain.replace('X', '24\n')
 key_chain = key_chain.replace('Y', '25\n')
 key_chain = key_chain.replace('Z', '26\n')
-key_chain_export = open('code/keychain.txt', 'w')
+key_chain_export = open('./resources/code/keychain.txt', 'w')
 key_chain_export = key_chain_export.write(key_chain)
 
 #Décalage des lettres selon la liste établie précedemment
@@ -86,7 +86,7 @@ def uncaesarize(text, shift):
 message_dechiffre = ''
 i = 0
 for element in message_chiffre:
-  with open("code/keychain.txt") as f:
+  with open("./resources/code/keychain.txt") as f:
     data = f.readlines()[i]
     data =  int(data)
     data = -data
@@ -174,7 +174,7 @@ if securite_1 == indicatif2:
 else:
     renée2 = 1
 
-with open('code/data.json', 'r') as f:
+with open('./resources/code/data.json', 'r') as f:
     contenu_fichier = json.load(f)
 
 if renée == 1:
@@ -192,5 +192,5 @@ else:
     contenu_fichier['verif_indicatif1'] = 0
 
 #Transcription du message chiffré dans le fichier data.json :
-with open('code/data.json', 'w') as f:
+with open('./resources/code/data.json', 'w') as f:
     json.dump(contenu_fichier, f)
