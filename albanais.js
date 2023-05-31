@@ -6,6 +6,8 @@ const spanDecryptInputs = document.querySelector('.decryptButtons');
 const divChamps = document.querySelector('.champs');
 const boutonCrypt = document.querySelector('.crypt');
 const boutonDecrypt = document.querySelector('.decrypt');
+const resultsCrypt = document.querySelector('.resultsCrypt');
+const resultsDecrypt = document.querySelector('.resultsDecrypt');
 var scryptALancer = 'code/crypt.py'; //Car en arrivant sur la page, par defaut on est sur le menu crypt
 scryptCrypt = 0; 
 scryptDecrypt = 0;
@@ -21,6 +23,8 @@ menuDeroulant.addEventListener("change", function() {
     divChamps.style.marginRight = '35vh';
     boutonDecrypt.style.display = 'inline';
     boutonCrypt.style.display = 'none';
+    resultsCrypt.style.display = 'none';
+    resultsDecrypt.style.display = 'block';
     var scryptDecrypt = 1;
     var scryptCrypt = 0;
   } else {
@@ -29,6 +33,8 @@ menuDeroulant.addEventListener("change", function() {
     divChamps.style.marginRight = '50vh';
     boutonDecrypt.style.display = 'none';
     boutonCrypt.style.display = 'inline';
+    resultsCrypt.style.display = 'block';
+    resultsDecrypt.style.display = 'none';
     var scryptDecrypt = 0;
     var scryptCrypt = 1;
   }
@@ -184,8 +190,26 @@ cryptButton.addEventListener('click', function() {
 var decryptButton = document.querySelector('.decrypt');
 
 decryptButton.addEventListener('click', function() {
-});
 
+  //CREATION DE LA FONCTION CALLBACK:
+  function fsReadResult(data) {
+    resultat = data;
+    const jsonData = JSON.parse(resultat);
+    const verifIndicatif1 = jsonData.verif_indicatif1;
+    const verifIndicatif2 = jsonData.verif_indicatif2;
+    const messageDechiffre = jsonData.messageDecrypte;
+    //Affichage des résultats:
+    var verifIndicatif1Div = document.querySelector('.verifIndicatif1');
+    var verifIndicatif2Div = document.querySelector('.verifIndicatif2');
+    var messageDechiffreDiv = document.querySelector('.messageDechiffreArea');
+
+    verifIndicatif1Div.textContent = ' ' + verifIndicatif1;
+    verifIndicatif2Div.textContent = ' ' + verifIndicatif2;
+    messageDechiffreDiv.textContent = ' ' + messageDechiffre;
+  }
+  //RECUPERATION des DONNEES AU PRES DE DATA.JSON
+  window.fs.fsRead('code/data.json', fsReadResult);
+});
 
 //PopUp indiquant qu'il n'y a pas de problemes avec les indicatifs -> utiliser les variables verif_indicatif dans data.json
 

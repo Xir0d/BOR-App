@@ -37,16 +37,29 @@
         <button class="decrypt" id="decrypt" title="Éxecute le fichier decrypt.py">✂️Décrypter</button>
       </div>
 
-      <div class="results">
-        <div class="resultTitle"> RÉSULTATS </div>
-          <div class="resultsContainer">
-            <div class="titles">
+      <div class="resultsCrypt">
+        <div class="resultTitleCrypt"> RÉSULTATS </div>
+          <div class="resultsCryptContainer">
+            <div class="titlesCrypt">
               <div class="indicatif1Title" title="Correspond à la somme des valeurs des lettres dans l'Alphabet (Exemple: A=1, B=2, etc...)">1er Indicatif :<span class="indicatif1"></span></div>
               <div class="indicatif2Title" title="Correspond au nombre de caractères dans le message">2ème Indicatif :<span class="indicatif2"></span></div>
-              <div class="messageChiffreTitle">Message Chiffré :</div>
             </div>
             <div class="messageChiffreDiv">
-              <textarea rows="10" cols="45" class="messageChiffreArea" placeholder="Voici le Message Chiffré:" readonly></textarea>
+              <textarea rows="10" cols="45" class="messageChiffreArea" placeholder="Voici le Message Chiffré..." readonly></textarea>
+            </div>
+          </div>
+      </div>
+
+      <div class="resultsDecrypt">
+        <div class="resultTitleDecrypt"> RÉSULTATS </div>
+          <div class="resultsDecryptContainer">
+            <div class="titlesDecrypt">
+              <div class="messageDechiffreTitle">Vérification du Message :</div>
+              <div class="verifIndicatif1Title" title="Correspond à la vérification du premier indicatif">1er Indicatif :<span class="verifIndicatif1"></span></div>
+              <div class="verifIndicatif2Title" title="Correspond à la vérification du deuxième indicatif">2ème Indicatif :<span class="verifIndicatif2"></span></div>
+            </div>
+            <div class="messageDechiffreDiv">
+              <textarea rows="10" cols="45" class="messageDechiffreArea" placeholder="Voici le Message Déchiffré..." readonly></textarea>
             </div>
           </div>
       </div>

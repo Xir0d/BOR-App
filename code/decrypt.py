@@ -86,7 +86,7 @@ def uncaesarize(text, shift):
 message_dechiffre = ''
 i = 0
 for element in message_chiffre:
-  with open("keychain.txt") as f:
+  with open("code/keychain.txt") as f:
     data = f.readlines()[i]
     data =  int(data)
     data = -data
@@ -178,17 +178,17 @@ with open('code/data.json', 'r') as f:
     contenu_fichier = json.load(f)
 
 if renée == 1:
-    contenu_fichier['messsageDecrypte'] = message_dechiffre
+    contenu_fichier['messageDecrypte'] = message_dechiffre
     contenu_fichier['verif_indicatif2'] = 1
 else:
-    contenu_fichier['messsageDecrypte'] = message_dechiffre
+    contenu_fichier['messageDecrypte'] = message_dechiffre
     contenu_fichier['verif_indicatif2'] = 0
 
 if renée2 == 1:
-    contenu_fichier['messsageDecrypte'] = message_dechiffre
+    contenu_fichier['messageDecrypte'] = message_dechiffre
     contenu_fichier['verif_indicatif1'] = 1
 else:
-    contenu_fichier['messsageDecrypte'] = message_dechiffre
+    contenu_fichier['messageDecrypte'] = message_dechiffre
     contenu_fichier['verif_indicatif1'] = 0
 
 #Transcription du message chiffré dans le fichier data.json :

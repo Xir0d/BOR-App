@@ -231,7 +231,7 @@ app_title {
     border: 1px solid #4c4c4c;
 }
 
-.results {
+.resultsCrypt {
     background-color: #242424;
     text-align: center;
     border-radius: 18px;
@@ -244,7 +244,7 @@ app_title {
     height: 35vh;
 }
 
-.resultTitle {
+.resultTitleCrypt {
     border-radius: 10px;
     padding: 1vh;
     background-color: #303030;
@@ -255,7 +255,7 @@ app_title {
     margin-right: 35vh;
 }
 
-.resultsContainer {
+.resultsCryptContainer {
     display: flex;
     margin-top: 2vh;
     justify-content: center;
@@ -289,7 +289,54 @@ app_title {
     color: white;
 }
 
-.messageChiffreTitle {
+.messageChiffreDiv {
+    padding: 1vh;
+    background-color: #303030;
+    border: 1px solid black;
+    margin-left: 12.5vh;
+}
+
+.messageChiffreArea {
+    font-size: 2vh;
+    outline: none;
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #c7c7c7;
+    text-decoration: none;
+}
+
+.resultsDecrypt {
+    background-color: #242424;
+    text-align: center;
+    border-radius: 18px;
+    padding: 1.5vh;
+    margin: 3vh;
+    box-shadow: 3px 10px 10px 0px #121212;
+    margin-left: 45vh;
+    margin-right: 45vh;
+    border: 0.2vh solid black;
+    height: 35vh;
+    display: none;
+}
+
+.resultTitleDecrypt {
+    border-radius: 10px;
+    padding: 1vh;
+    background-color: #303030;
+    color: white;
+    border: 1px solid transparent;
+    font-size: 2vh;
+    margin-left: 35vh;
+    margin-right: 35vh;
+}
+
+.resultsDecryptContainer {
+    display: flex;
+    margin-top: 2vh;
+    justify-content: center;
+}
+
+.messageDechiffreTitle {
     padding: 1vh;
     background-color: #303030;
     color: grey;
@@ -299,14 +346,34 @@ app_title {
     margin-top: 2vh;
 }
 
-.messageChiffreDiv {
+.verifIndicatif1Title  {
+    padding: 1vh;
+    background-color: #303030;
+    color: grey;
+    font-size: 2vh;
+    border: 1px solid black;
+    width: 20vh;
+    margin-top: 2vh;
+}
+
+.verifIndicatif2Title {
+    padding: 1vh;
+    background-color: #303030;
+    color: grey;
+    font-size: 2vh;
+    border: 1px solid black;
+    width: 20vh;
+    margin-top: 2vh;
+}
+
+.messageDechiffreDiv {
     padding: 1vh;
     background-color: #303030;
     border: 1px solid black;
     margin-left: 12.5vh;
 }
 
-.messageChiffreArea {
+.messageDechiffreArea {
     font-size: 2vh;
     outline: none;
     resize: none;
