@@ -5,7 +5,7 @@ body {
   overflow: hidden; /*empeche de descendre la page*/
   user-select: none; /*empeche de selectionner du texte*/
   background-color: #202020;
-  background-image: url("fonts/logo.png");
+  background-image: url("../fonts/logo.png");
   background-repeat: no-repeat;
   background-position: top left;
   background-size: auto;
